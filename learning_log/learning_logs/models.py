@@ -20,6 +20,10 @@ class Entry(models.Model):
     class Meta:
         verbose_name_plural = 'entries'
 
-        def __str__(self):
-            """Returns text representation of model."""
+    def __str__(self):
+        """Returns text representation of model."""
+        if len(self.text) > 50:
             return self.text[:50] + "..."
+        else:
+            return self.text
+
